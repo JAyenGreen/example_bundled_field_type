@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains name_field_type.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+
+function name_field_type_theme($existing, $type, $theme, $path) {
+    $theme = [
+        'name_field_widget' => [
+            'variables' => [
+                'title' => NULL,
+                'first_name' => NULL,
+                'middle_name' => NULL,
+                'last_name' => NULL,
+                'maternal_last_name' => NULL,
+                'suffix' => NULL,
+            ],
+        ],
+    ];
+
+    return $theme;
+}
+
+/**
+ * Implements hook_help().
+ */
+function name_field_type_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the name_field_type module.
+    case 'help.page.name_field_type':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Field type widget example.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

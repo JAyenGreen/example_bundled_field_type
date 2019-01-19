@@ -1,0 +1,9 @@
+name: 'Name'
+type: module
+description: 'Compound field type example.'
+core: 8.x
+package: 'Field types'
+dependencies:
+  - field
+  - node
+  - text
